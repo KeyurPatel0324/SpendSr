@@ -55,7 +55,7 @@ ROOT_URLCONF = 'spendsr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/spendsr/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
