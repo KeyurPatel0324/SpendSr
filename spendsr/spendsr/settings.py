@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import os.path
 # user login admin and password admin
 from pathlib import Path
 
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login'
+    'login',
+    'expense_app'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,10 @@ ROOT_URLCONF = 'spendsr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/spendsr/template'],
+        'DIRS': [
+            os.path.join(BASE_DIR,'expense_app','template'),
+            os.path.join(BASE_DIR,'login','template')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
