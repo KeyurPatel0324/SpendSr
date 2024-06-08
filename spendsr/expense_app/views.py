@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from django.views import View
 from .models import *
+from django.db import connection
 # Create your views here.
 
 class ExpenseDetails(View):
