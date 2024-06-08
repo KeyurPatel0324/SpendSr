@@ -7,13 +7,9 @@ class ExpenseDetails(View):
 
     def get(self,request):
         try:
-            query_data = expensemaster.objects.all().values()
+            query_data = list(expensemaster.objects.all().values())
             context = {"data":query_data}
-            return render(request,'expense.html',context)
+            return render(request,'expense_view.html',context)
         except Exception as e:
             HttpResponse("Error is FilterExpenseData {}".format(e))
-
-
-
-
 

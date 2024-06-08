@@ -6,8 +6,8 @@ class categorymaster(models.Model):
     category_name = models.CharField(max_length=50)
     is_valid = models.IntegerField(default=0)
 
-    def __int__(self):
-        return {self.id}
+    def __str__(self):
+        return f"{self.id}  {self.category_name}"
 
 class expensemaster(models.Model):
     id =models.BigAutoField(primary_key=True)
@@ -15,6 +15,6 @@ class expensemaster(models.Model):
     amount = models.DecimalField(max_digits=10,decimal_places=2)
     is_valid = models.IntegerField(default=0)
 
-    def __int__(self):
-        return {self.id}
+    def __str__(self):
+        return f"{self.id} {self.category_id} {self.amount}"
 
